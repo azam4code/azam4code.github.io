@@ -43,6 +43,33 @@ body {
   margin-bottom: 3rem;
 }
 
+.btn,
+.btn::after {
+  background: linear-gradient(45deg, transparent 5%, var(--light-color) 5%);
+  border: 0;
+  color: var(--dark-color);
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  margin: 3rem 0;
+  font-weight: 700;
+  outline: transparent;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  transition: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 header .nav {
   display: flex;
   justify-content: space-between;
@@ -83,7 +110,8 @@ header .nav .menu-icon .line2 {
 .hero {
   height: 80vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero .main-heading {
   font-size: 4.5rem;
@@ -94,6 +122,8 @@ header .nav .menu-icon .line2 {
 .hero .main-heading img {
   margin-left: 10rem;
   display: block;
+  width: 250px;
+  height: 50px;
 }
 .hero .main-heading .text-outline {
   -webkit-text-stroke: 1px var(--light-color);
@@ -188,4 +218,56 @@ header .nav .menu-icon .line2 {
 
 .work {
   padding: 10rem 0;
+}
+.work .work-row {
+  display: flex;
+  align-items: center;
+  padding: 7rem 0;
+}
+.work .work-row__left {
+  width: 45%;
+  padding-right: 10%;
+}
+.work .work-row__left h3 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.work .work-row__left p {
+  font-size: 1.6rem;
+}
+.work .work-row__left .work-tags {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.work .work-row__left .work-tags span {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--light-color);
+}
+.work .work-row__left .work-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.work .work-row__left .work-btns .btn__work {
+  padding: 1.4rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.work .work-row__left .work-btns .btn-icon {
+  font-size: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+.work .work-row__left .work-btns .btn-icon img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.work .work-row__right {
+  width: 55%;
+}
+.work .work-row__right img {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
