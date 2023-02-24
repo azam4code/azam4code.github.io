@@ -184,4 +184,8 @@ header .nav .menu-icon .line2 {
 .about__right .right__text:hover {
   transform: rotate(0deg);
   opacity: 1;
+}
+
+.work {
+  padding: 10rem 0;
 }/*# sourceMappingURL=main.css.map */
