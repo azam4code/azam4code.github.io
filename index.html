@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azam -Front End Developer </title>
+    <title>Azam - Front End Developer </title>
     <link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 
@@ -20,16 +21,34 @@
         <!-- Header Start -->
         <header>
             <nav class="nav">
-                <a href="#" class="logo">A.</a>
+                <a href="#" id="logo" class="logo">A.</a>
                 <ul class="nav__list">
-                    <li class="nav__list-item"><a href="#">About</a></li>
-                    <li class="nav__list-item"><a href="#">Work</a></li>
-                    <li class="nav__list-item"><a href="#">Contact</a></li>
                     <li class="nav__list-item">
-                        <div class="menu-icon">
+                        <a href="#">
+                            <span class="nav-t-hide">About</span>
+                            <span class="nav-t-1">About</span>
+                            <span class="nav-t-2">About</span>
+                        </a>
+                    </li> 
+                    <li class="nav__list-item">
+                        <a href="#">
+                            <span class="nav-t-hide">Work</span>
+                            <span class="nav-t-1">Work</span>
+                            <span class="nav-t-2">Work</span>
+                        </a>
+                    </li> 
+                    <li class="nav__list-item">
+                        <a href="#">
+                            <span class="nav-t-hide">Contact</span>
+                            <span class="nav-t-1">Contact</span>
+                            <span class="nav-t-2">Contact</span>
+                        </a>
+                    </li> 
+                    <li class="nav__list-item">
+                        <a href="#" class="menu-icon">
                             <span class="line line1"></span>
                             <span class="line line2"></span>
-                        </div>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -51,9 +70,7 @@
                     </span>
                 </h1>
                 <a href="" class="btn bt__Primary">
-                    <span class="btn-hide">My Work</span>
-                    <span class="btn-text-one">My Work</span>
-                    <span class="btn-text-two">My Work</span>
+                    <span class="btn-text">My Work</span>
                 </a>
             </section>
             <!-- Hero Section End -->
@@ -73,9 +90,7 @@
                         together!
                     </p>
                     <a href="#" class="btn btn__primary btn__about">
-                        <span class="btn-hide">Let's Connect</span>
-                        <span class="btn-text-one">Let's Connect</span>
-                        <span class="btn-text-two">Let's Connect</span>
+                        <span class="btn-text">Let's Connect</span>
                     </a>
                 </div>
                 <div class="about__right">
@@ -111,9 +126,7 @@
                         </div>
                         <div class="work-btns">
                             <a href="#" class="btn btn__work">
-                                <span class="btn-hide">View Details</span>
-                                <span class="btn-text-one">View Details</span>
-                                <span class="btn-text-two">View Details</span>
+                                <span class="btn-text">View Details</span>
                             </a>
                             <a href="#" class="btn-icon">Live Project <img src="imgs/icon-live.svg" alt=""></a>
                         </div>
@@ -138,9 +151,7 @@
                         </div>
                         <div class="work-btns">
                             <a href="#" class="btn btn__work">
-                                <span class="btn-hide">View Details</span>
-                                <span class="btn-text-one">View Details</span>
-                                <span class="btn-text-two">View Details</span>
+                                <span class="btn-text">View Details</span>
                             </a>
                             <a href="#" class="btn-icon">Live Project <img src="imgs/icon-live.svg" alt=""></a>
                         </div>
@@ -165,9 +176,7 @@
                         </div>
                         <div class="work-btns">
                             <a href="#" class="btn btn__work">
-                                <span class="btn-hide">View Details</span>
-                                <span class="btn-text-one">View Details</span>
-                                <span class="btn-text-two">View Details</span>
+                                <span class="btn-text">View Details</span>
                             </a>
                             <a href="#" class="btn-icon">Live Project <img src="imgs/icon-live.svg" alt=""></a>
                         </div>
@@ -192,9 +201,7 @@
                         </div>
                         <div class="work-btns">
                             <a href="#" class="btn btn__work">
-                                <span class="btn-hide">View Details</span>
-                                <span class="btn-text-one">View Details</span>
-                                <span class="btn-text-two">View Details</span>
+                                <span class="btn-text">View Details</span>
                             </a>
                             <a href="#" class="btn-icon">Live Project <img src="imgs/icon-live.svg" alt=""></a>
                         </div>
@@ -207,10 +214,104 @@
             </section>
             <!-- Section Work End -->
 
+            <!-- Section Testimonial Start -->
+            <section class="testimonial">
+                <h2 class="heading__secondary text-center">Testimonials</h2>
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="testimonial__text">
+                                <p>
+                                    <img class="testimonial__icon--left" src="imgs/bi_quote.svg" alt="">
+                                    Azam is very patient and very skilled to handle HTML projects. He quickly understood
+                                    our
+                                    concerns and resolved them in no time. He is very easy to communicate with and I'd
+                                    look
+                                    forward to work with him in near future. Thanks Azam!
+                                    <img class="testimonial__icon--right" src="imgs/bi_quote.svg" alt="">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial__text">
+                                <p> <img class="testimonial__icon--left" src="imgs/bi_quote.svg" alt="">
+                                    This is my 3rd time working with Azam, and it's been a pleasure like previous two
+                                    times.
+                                    Excellent work done with great cooperation. Will be hiring him again if needed in
+                                    the
+                                    future.
+                                    <img class="testimonial__icon--right" src="imgs/bi_quote.svg" alt="">
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="testimonial__text">
+                                <p>
+                                    <img class="testimonial__icon--left" src="imgs/bi_quote.svg" alt="">
+                                    Fantastic to work with Muhammad. He really went the extra mile and
+                                    made everything exactly how I wanted it. Was never annoyed with all the changes I
+                                    asked him
+                                    to do, and worked 12-14 hours a day to get the website finished on time.
+                                    Recommended!
+                                    <img class="testimonial__icon--right" src="imgs/bi_quote.svg" alt="">
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="testimonial__text">
+                                <p>
+                                    <img class="testimonial__icon--left" src="imgs/bi_quote.svg" alt="">
+                                    Overall great freelancer, there wasn't one design sample i showed him that HE
+                                    couldn't accomplish. Thanks so much sir!
+                                    <img class="testimonial__icon--right" src="imgs/bi_quote.svg" alt="">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"> <img src="imgs/arrow-left.svg" alt=""></div>
+                    <div class="swiper-button-next"><img src="imgs/arrow-right.svg" alt=""></div>
+
+                </div>
+
+            </section>
+            <!-- Section Testimonial End -->
+
+            <!-- Section Contact Start -->
+            <section class="contact">
+                <div class="contact__inner">
+                    <h2>Need a frontend developer?</h2>
+                    <a href="mailto:mazam8414@gmail.com" target="_blank" class="contact__btn">Let's talk! <img
+                            src="imgs/arrow-up-right.svg" alt=""></a>
+                    <img class="contact__icon" src="imgs/arrow-contact.svg" alt="">
+                </div>
+            </section>
+            <!-- Section Contact End -->
+
+            <!-- Footer End -->
+            <footer class="footer">
+                <div class="footer__inner">
+                    <a href="https://twitter.com/azam_png" target="_blank"><img src="imgs/twitter-icon.svg" alt=""></a>
+                    <a href="https://github.com/azam4code" target="_blank"><img src="imgs/github-icon.svg" alt=""></a>
+                </div>
+                <div class="copyright">
+                    Copyright 2023 &COPY; Azam. All Right Reserved.
+                </div>
+            </footer>
+            <!-- Footer End -->
+
         </main>
         <!-- Main Section End -->
     </div>
 
+    <div class="cursor"><span></span></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
