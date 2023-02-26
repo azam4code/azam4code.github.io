@@ -25,6 +25,11 @@ html {
   cursor: none;
 }
 
+@media (max-width: 1400px) {
+  html {
+    font-size: 50%;
+  }
+}
 body {
   font-family: "Space Grotesk", sans-serif;
   background-color: var(--dark-color);
@@ -347,7 +352,7 @@ header .nav .menu-icon:hover .line {
   align-items: center;
 }
 .testimonial__text {
-  font-size: 40px;
+  font-size: 4rem;
   position: relative;
   margin: 5rem 12rem;
 }
@@ -465,6 +470,7 @@ header .nav .menu-icon:hover .line {
 
 .cursor.img-active {
   transform: scale(3);
+  border: 1px solid var(--light-color);
 }
 
 .menu-popup {
@@ -491,7 +497,7 @@ header .nav .menu-icon:hover .line {
   font-size: 5rem;
   display: flex;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 8rem;
   font-weight: bold;
 }
 .menu-popup__right {
@@ -499,6 +505,13 @@ header .nav .menu-icon:hover .line {
   display: flex;
   flex-direction: column;
   align-items: end;
+  position: relative;
+}
+.menu-popup__right .arrow-img {
+  position: absolute;
+  right: 25rem;
+  top: 14rem;
+  transform: rotate(-15deg);
 }
 
 .contact__btn.link-dark::after {
