@@ -1,15 +1,15 @@
-const swiper = new Swiper('.swiper', {
-
-    loop: true,
-
+const swiper = new Swiper('.swiper', { 
+    loop: true, 
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     }
 })
-let mouse = document.querySelector('.cursor')
-let mouseTxt = mouse.querySelector('span')
+ 
+const mouse = document.querySelector('.cursor')
+const mouseTxt = mouse.querySelector('span')
+const menuIcon = document.querySelector('.menu-icon')
 
 function cursor(e) {
     mouse.style.top = e.pageY + 'px'
@@ -31,7 +31,23 @@ function activeCursor(e) {
         mouse.classList.remove('btn-active')
         mouseTxt.innerText = ''
     }
+    if (item.classList.contains('extra')) {
+        mouse.classList.add('img-active') 
+    } else {
+        mouse.classList.remove('img-active') 
+    }
+    
 }
 
+// GSAP 
+let controller
+let slideScene
+
+
+function navToggle(e){
+
+}
+
+menuIcon.addEventListener('click', navToggle)
 window.addEventListener('mousemove', cursor)
 window.addEventListener('mouseover', activeCursor)
