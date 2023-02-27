@@ -43,6 +43,40 @@ function activeCursor(e) {
 let controller
 let slideScene
 
+function animateSlide(){
+    controller = new ScrollMagic.Controller()
+    const slides = document.querySelectorAll('.animate-parent')
+    const nav = document.querySelector('header') 
+    const footer = document.querySelector('footer')
+    const arrow = document.querySelector('.contact__icon')
+
+    slides.forEach(slide => {
+        const revealContent = slide.querySelectorAll('.reveal-content')
+        const revealImg = slide.querySelector('.reveal-img')
+        const img = slide.querySelector('.work-img')
+
+        const slideTl = gsap.timeline({
+            defaults: {duration:1, ease: 'power2.inOut'}
+        })
+        slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'})
+        slideTl.fromTo(revealContent, {x: '0%'}, {x: '100%'}) 
+        slideTl.fromTo(revealImg, {x: '0%'}, {x: '100%'}) 
+        slideTl.fromTo(img, {scale: '0'}, {scale: '1'}, '-=1') 
+        slideTl.fromTo(arrow, {opacity: '0'}, {opacity: '1'}) 
+        slideTl.fromTo(footer, {opacity: '0'}, {opacity: '1'} , '-=1')
+        
+        slideScene = new ScrollMagic.Scene({
+            triggerElement : slide,
+            triggerHook: 0.5 ,
+            reverse: false
+        })
+        .setTween(slideTl)
+        .addIndicators({colorStart: 'white', colorTrigger: 'white', name : 'slide'})
+        .addTo(controller)
+    })
+}
+
+animateSlide()
 
 function navToggle(e){
 
