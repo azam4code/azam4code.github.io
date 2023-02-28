@@ -39,18 +39,19 @@ function activeCursor(e) {
     
 }
 
+
+
 // GSAP 
 let controller
-let slideScene
+let slideScene 
 
 function animateSlide(){
     controller = new ScrollMagic.Controller()
     const slides = document.querySelectorAll('.animate-parent')
     const nav = document.querySelector('header') 
-    const footer = document.querySelector('footer')
-    const arrow = document.querySelector('.contact__icon')
+    const footer = document.querySelector('footer') 
 
-    slides.forEach(slide => {
+    slides.forEach((slide, index, slides) => {
         const revealContent = slide.querySelectorAll('.reveal-content')
         const revealImg = slide.querySelector('.reveal-img')
         const img = slide.querySelector('.work-img')
@@ -58,27 +59,42 @@ function animateSlide(){
         const slideTl = gsap.timeline({
             defaults: {duration:1, ease: 'power2.inOut'}
         })
+        slideTl.fromTo(revealContent, {x: '0%'}, {x: '200%'} )  
         slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'})
-        slideTl.fromTo(revealContent, {x: '0%'}, {x: '100%'}) 
-        slideTl.fromTo(revealImg, {x: '0%'}, {x: '100%'}) 
+        slideTl.fromTo(revealImg, {x: '0%'}, {x: '200%'},'-=3') 
         slideTl.fromTo(img, {scale: '0'}, {scale: '1'}, '-=1') 
-        slideTl.fromTo(arrow, {opacity: '0'}, {opacity: '1'}) 
-        slideTl.fromTo(footer, {opacity: '0'}, {opacity: '1'} , '-=1')
+        slideTl.fromTo(footer, {scale: '0'}, {scale: '1'},  '-=3')
         
         slideScene = new ScrollMagic.Scene({
             triggerElement : slide,
-            triggerHook: 0.5 ,
+            triggerHook: 0.75,
             reverse: false
         })
         .setTween(slideTl)
         .addIndicators({colorStart: 'white', colorTrigger: 'white', name : 'slide'})
-        .addTo(controller)
+        .addTo(controller)  
     })
 }
 
-animateSlide()
+animateSlide() 
 
 function navToggle(e){
+    if(!e.target.classList.contains('active')){
+        e.target.classList.add('active')
+        gsap.to('.line1', .5, {rotate: '45', y: 5, background: '#202022'})
+        gsap.to('.line2', .5, {rotate: '-45', y: -5, width: '100%', background: '#202022'})
+        gsap.to('.menu-popup', .5, {clipPath: 'circle(2500px at 100% -10%'})
+        gsap.to(mouse, .5, {border: "1px solid #202022"})
+        document.body.classList.add('hide-overflow')
+    } else{
+        e.target.classList.remove('active')
+        gsap.to('.line1', .5, {rotate: '0', y: 0, background: '#d9d9d9'})
+        gsap.to('.line2', .5, {rotate: '0', y: 0, width: '70%', background: '#d9d9d9'})
+        gsap.to('.menu-popup', .5, {clipPath: 'circle(50px at 100% -10%'})
+        gsap.to(mouse, .5, {border: "1px solid #d9d9d9"})
+        document.body.classList.remove('hide-overflow')
+    }
+    
 
 }
 
