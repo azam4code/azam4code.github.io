@@ -633,7 +633,7 @@ body.hide-overflow {
     padding: 15rem 0 0;
   }
   .testimonial__text {
-    margin: 0;
+    margin: 10px;
   }
   .swiper-button-next,
   .swiper-button-prev {
