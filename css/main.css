@@ -609,7 +609,7 @@ body.hide-overflow {
     display: none;
   }
   .work .work-row {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .work .work-row__left {
     margin-top: 5rem;

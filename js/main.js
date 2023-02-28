@@ -61,8 +61,8 @@ function animateSlide(){
         })
         slideTl.fromTo(revealContent, {x: '0%'}, {x: '200%'} )  
         slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'})
-        slideTl.fromTo(revealImg, {x: '0%'}, {x: '200%'},'-=3') 
-        slideTl.fromTo(img, {scale: '0'}, {scale: '1'}, '-=1') 
+        slideTl.fromTo(revealImg, {x: '0%'}, {x: '100%'},'-=3') 
+        slideTl.fromTo(img, {scale: '0'}, {scale: '1'}, '-=2') 
         slideTl.fromTo(footer, {scale: '0'}, {scale: '1'},  '-=3')
         
         slideScene = new ScrollMagic.Scene({
