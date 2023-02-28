@@ -606,7 +606,7 @@ body.hide-overflow {
     display: none;
   }
   .work .work-row {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   .work .work-row__left {
     margin-top: 5rem;
