@@ -1,3 +1,8 @@
+const loader = document.querySelector('.preloader-div')
+window.addEventListener('load', function(){
+    loader.style.display = 'none' 
+}) 
+
 const swiper = new Swiper('.swiper', { 
     loop: true, 
     // Navigation arrows
@@ -50,6 +55,7 @@ function animateSlide(){
     const slides = document.querySelectorAll('.animate-parent')
     const nav = document.querySelector('header') 
     const footer = document.querySelector('footer') 
+ 
 
     slides.forEach((slide, index, slides) => {
         const revealContent = slide.querySelectorAll('.reveal-content')
@@ -58,7 +64,7 @@ function animateSlide(){
 
         const slideTl = gsap.timeline({
             defaults: {duration:1, ease: 'power2.inOut'}
-        })
+        }) 
         slideTl.fromTo(revealContent, {x: '0%'}, {x: '200%'} )  
         slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'})
         slideTl.fromTo(revealImg, {x: '0%'}, {x: '100%'},'-=3') 
@@ -71,7 +77,7 @@ function animateSlide(){
             reverse: false
         })
         .setTween(slideTl)
-        .addIndicators({colorStart: 'white', colorTrigger: 'white', name : 'slide'})
+        // .addIndicators({colorStart: 'white', colorTrigger: 'white', name : 'slide'})
         .addTo(controller)  
     })
 }

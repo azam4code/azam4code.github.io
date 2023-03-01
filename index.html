@@ -17,7 +17,30 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="preloader-div">
+    <div class='loader'>
+        <div class='spinner'>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <svg>
+          <defs>
+            <filter id='goo'>
+              <feGaussianBlur in='SourceGraphic' stdDeviation='8' result='blur' />
+              <feColorMatrix in='blur' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -8' result='goo' />
+              <feBlend in='SourceGraphic' in2='goo' />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div class="container content-h">
         <!-- Header Start -->
         <header>
             <nav class="nav">
