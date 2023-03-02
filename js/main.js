@@ -83,7 +83,7 @@ function animateSlide(){
             reverse: false
         })
         .setTween(slideTl)
-        .addIndicators({colorStart: 'white', colorTrigger: 'white', name : 'slide'})
+        // .addIndicators({colorStart: 'white', colorTrigger: 'white', name : 'slide'})
         .addTo(controller)  
     })
 }
