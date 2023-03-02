@@ -640,7 +640,7 @@ body.hide-overflow {
     font-size: 4rem;
   }
   .testimonial__text {
-    margin: 10px;
+    margin: 10px 0;
   }
   .swiper-button-next,
   .swiper-button-prev {

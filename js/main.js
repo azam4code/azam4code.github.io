@@ -1,7 +1,7 @@
 const loader = document.querySelector('.preloader-div')
-window.addEventListener('load', function(){
-    loader.style.display = 'none' 
-}) 
+// window.addEventListener('load', function(){
+//     loader.style.display = 'none' 
+// }) 
 
 const swiper = new Swiper('.swiper', { 
     loop: true, 
@@ -44,6 +44,11 @@ function activeCursor(e) {
     
 }
 
+const loaderTl = gsap.timeline({
+    defaults: {duration:3, ease: 'power2.inOut'}
+}) 
+loaderTl.to(loader, {opacity: 0 })
+loaderTl.to(loader, {visibility: 'hidden' })
 
 
 // GSAP 
@@ -63,12 +68,13 @@ function animateSlide(){
         const img = slide.querySelector('.work-img')
 
         const slideTl = gsap.timeline({
-            defaults: {duration:1, ease: 'power2.inOut'}
+            defaults: {duration:1, delay: 1, ease: 'power2.inOut'}
         }) 
-        slideTl.fromTo(revealContent, {x: '0%'}, {x: '200%'} )  
-        slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'})
-        slideTl.fromTo(revealImg, {x: '0%'}, {x: '100%'},'-=3') 
-        slideTl.fromTo(img, {scale: '0'}, {scale: '1'}, '-=2') 
+         
+        
+        slideTl.fromTo(revealContent, {x: '0%'}, {x: '200%'} )
+        slideTl.fromTo(img, {scale: '0'}, {scale: '1'} ) 
+        slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'}, '-=1') 
         slideTl.fromTo(footer, {scale: '0'}, {scale: '1'},  '-=3')
         
         slideScene = new ScrollMagic.Scene({
@@ -77,7 +83,7 @@ function animateSlide(){
             reverse: false
         })
         .setTween(slideTl)
-        // .addIndicators({colorStart: 'white', colorTrigger: 'white', name : 'slide'})
+        .addIndicators({colorStart: 'white', colorTrigger: 'white', name : 'slide'})
         .addTo(controller)  
     })
 }
