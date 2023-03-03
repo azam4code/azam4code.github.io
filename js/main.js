@@ -62,18 +62,17 @@ function animateSlide(){
     const footer = document.querySelector('footer') 
  
 
-    slides.forEach((slide, index, slides) => {
+    slides.forEach((slide) => {
         const revealContent = slide.querySelectorAll('.reveal-content')
         const revealImg = slide.querySelector('.reveal-img')
         const img = slide.querySelector('.work-img')
 
         const slideTl = gsap.timeline({
-            defaults: {duration:1, delay: 1, ease: 'power2.inOut'}
+            defaults: {duration:1,  ease: 'power2.inOut'}
         }) 
-         
-        
-        slideTl.fromTo(revealContent, {x: '0%'}, {x: '200%'} )
-        slideTl.fromTo(img, {scale: '0'}, {scale: '1'} ) 
+           
+        slideTl.fromTo(img, {scale: '0'}, {scale: '1'} )     
+        slideTl.fromTo(revealContent, {x: '0%'}, {x: '110%'} )
         slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'}, '-=1') 
         slideTl.fromTo(footer, {scale: '0'}, {scale: '1'},  '-=3')
         
