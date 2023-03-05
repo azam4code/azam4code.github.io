@@ -2,7 +2,7 @@
     --dark-color: #202022;
     --light-color: #d9d9d9;
 }
- 
+
 *,
 a:before,
 *::after {
@@ -203,6 +203,15 @@ header {
 
             &:hover .line2 {
                 width: 100%
+            }
+
+            &.active .line1 {
+                transform: rotate(45deg) translateY(6px);
+            }
+
+            &.active .line2 {
+                transform: rotate(-45deg) translateY(-7px);
+
             }
         }
     }
@@ -758,7 +767,12 @@ body.hide-overflow {
 
         .main-heading {
             font-size: 4rem;
+
+            img {
+                margin-left: 2rem;
+            }
         }
+
     }
 
     .testimonial__text {
@@ -852,6 +866,24 @@ body.hide-overflow {
     .hide-on-mobile {
         display: none;
     }
+
+    header {
+        .nav {
+            .menu-icon {
+
+                &.active .line1 {
+                    transform: rotate(45deg) translateY(5px);
+                }
+
+                &.active .line2 {
+                    transform: rotate(-45deg) translateY(-5px);
+
+                }
+            }
+        }
+    }
+
+
 }
 
 
@@ -864,7 +896,7 @@ body.hide-overflow {
     height: 100%;
     width: 100%;
     background-color: #202022;
-    z-index: 999999; 
+    z-index: 999999;
 
 }
 

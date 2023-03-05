@@ -43,9 +43,10 @@ function activeCursor(e) {
     }
     
 }
+ 
 
 const loaderTl = gsap.timeline({
-    defaults: {duration:3, ease: 'power2.inOut'}
+    defaults: {duration:3, ease: 'power3.inOut'}
 }) 
 loaderTl.to(loader, {opacity: 0 })
 loaderTl.to(loader, {visibility: 'hidden' })
@@ -70,7 +71,7 @@ function animateSlide(){
         const slideTl = gsap.timeline({
             defaults: {duration:1,  ease: 'power2.inOut'}
         }) 
-           
+       slideTl.fromTo(revealImg, {x:'0%'}, {x: '100%'}, '-=1')    
         slideTl.fromTo(img, {scale: '0'}, {scale: '1'} )     
         slideTl.fromTo(revealContent, {x: '0%'}, {x: '110%'} )
         slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'}, '-=1') 
@@ -92,21 +93,25 @@ animateSlide()
 function navToggle(e){
     if(!e.target.classList.contains('active')){
         e.target.classList.add('active')
-        gsap.to('.line1', .5, {rotate: '45', y: 5, background: '#202022'})
-        gsap.to('.line2', .5, {rotate: '-45', y: -5, width: '100%', background: '#202022'})
+        gsap.to('.line1', .5, {  background: '#202022'})
+        gsap.to('.line2', .5, {   width: '100%', background: '#202022'})
         gsap.to('.menu-popup', .5, {clipPath: 'circle(2500px at 100% -10%'})
         gsap.to(mouse, .5, {border: "1px solid #202022"})
         document.body.classList.add('hide-overflow')
     } else{
         e.target.classList.remove('active')
-        gsap.to('.line1', .5, {rotate: '0', y: 0, background: '#d9d9d9'})
-        gsap.to('.line2', .5, {rotate: '0', y: 0, width: '70%', background: '#d9d9d9'})
+        gsap.to('.line1', .5, {  background: '#d9d9d9'})
+        gsap.to('.line2', .5, {  width: '70%', background: '#d9d9d9'})
         gsap.to('.menu-popup', .5, {clipPath: 'circle(50px at 100% -10%'})
         gsap.to(mouse, .5, {border: "1px solid #d9d9d9"})
         document.body.classList.remove('hide-overflow')
-    }
-    
-
+    }     
+      // check if media query condition is true
+        const mediaQuery = window.matchMedia("(max-width: 450px)");
+        if (mediaQuery.matches && menuIcon.classList.contains('active')) {
+           const d = document.querySelector('.line2').style.transform = 'rotate(-45deg) translateY(-2px) !important'
+            console.log(d)
+        }
 }
 
 menuIcon.addEventListener('click', navToggle)
