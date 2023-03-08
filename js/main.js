@@ -110,7 +110,7 @@ function navToggle(e){
         const mediaQuery = window.matchMedia("(max-width: 450px)");
         if (mediaQuery.matches && menuIcon.classList.contains('active')) {
            const d = document.querySelector('.line2').style.transform = 'rotate(-45deg) translateY(-2px) !important'
-            console.log(d)
+            
         }
 }
 
