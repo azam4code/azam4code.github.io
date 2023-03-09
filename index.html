@@ -18,27 +18,27 @@
 
 <body>
     <div class="preloader-div">
-    <div class='loader'>
-        <div class='spinner'>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class='loader'>
+            <div class='spinner'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <svg>
+                <defs>
+                    <filter id='goo'>
+                        <feGaussianBlur in='SourceGraphic' stdDeviation='8' result='blur' />
+                        <feColorMatrix in='blur' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -8' result='goo' />
+                        <feBlend in='SourceGraphic' in2='goo' />
+                    </filter>
+                </defs>
+            </svg>
         </div>
-        <svg>
-          <defs>
-            <filter id='goo'>
-              <feGaussianBlur in='SourceGraphic' stdDeviation='8' result='blur' />
-              <feColorMatrix in='blur' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -8' result='goo' />
-              <feBlend in='SourceGraphic' in2='goo' />
-            </filter>
-          </defs>
-        </svg>
-      </div>
     </div>
     <div class="container content-h">
         <!-- Header Start -->
@@ -138,7 +138,7 @@
                     <h2 class="heading__secondary">My Work</h2>
                     <div class="reveal-content"></div>
                 </div>
-                <div class="work-row animate-parent"> 
+                <div class="work-row animate-parent">
                     <div class="work-row__left">
                         <h3>Project One</h3>
                         <p>
@@ -342,7 +342,7 @@
             </div>
             <div class="copyright">
                 Copyright 2023 &COPY; Azam. All Right Reserved.
-            </div> 
+            </div>
         </footer>
         <!-- Footer End -->
     </div>
@@ -356,8 +356,8 @@
             <div class="menu-popup__right">
                 <p class="link-dark link-dark__sm">Need a frontend developer?</p>
                 <img class="arrow-img" src="imgs/Arrow 3.svg" alt="">
-                <a href="mailto:mazam8414@gmail.com" target="_blank" class="contact__btn link-dark extra">Let's Talk <img
-                        src="imgs/arrow-up-right-dark.svg" alt=""></a>
+                <a href="mailto:mazam8414@gmail.com" target="_blank" class="contact__btn link-dark extra">Let's Talk
+                    <img src="imgs/arrow-up-right-dark.svg" alt=""></a>
             </div>
         </div>
     </div>

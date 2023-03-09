@@ -16,6 +16,7 @@ const mouse = document.querySelector('.cursor')
 const mouseTxt = mouse.querySelector('span')
 const menuIcon = document.querySelector('.menu-icon')
 
+// Cursor 
 function cursor(e) {
     mouse.style.top = e.pageY + 'px'
     mouse.style.left = e.pageX + 'px'
@@ -45,6 +46,7 @@ function activeCursor(e) {
 }
  
 
+// Loader Animation  
 const loaderTl = gsap.timeline({
     defaults: {duration:3, ease: 'power3.inOut'}
 }) 
