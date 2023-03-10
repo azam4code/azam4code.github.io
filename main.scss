@@ -11,6 +11,11 @@ a:before,
     box-sizing: border-box;
 }
 
+::selection {
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -23,7 +28,6 @@ ul {
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-
 }
 
 @media (max-width:1400px) {
@@ -623,6 +627,11 @@ header {
     clip-path: circle(50px at 100% -10%);
     -webkit-clip-path: circle(50px at 100% -10%);
 
+    ::selection {
+        background-color: #202022;
+        color: #fff;
+    }
+
     .container {
         display: flex;
         justify-content: space-between;
@@ -653,9 +662,7 @@ header {
             width: 2.8rem;
             transform: rotate(-15deg);
         }
-    }
-
-
+    } 
 }
 
 .contact__btn.link-dark::after {
@@ -819,7 +826,7 @@ body.hide-overflow {
     }
 
     .cursor.btn-active {
-        background-color: #d9d9d9;
+        background-color: var(--light-color);
         transform: scale(2);
         border: 1px solid var(--light-color);
     }
@@ -882,12 +889,10 @@ body.hide-overflow {
             }
         }
     }
-
-
 }
 
 
-.preloader-div {
+.preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -895,9 +900,8 @@ body.hide-overflow {
     bottom: 0;
     height: 100%;
     width: 100%;
-    background-color: #202022;
+    background-color: var(--dark-color);
     z-index: 999999;
-
 }
 
 .loader {

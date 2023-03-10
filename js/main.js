@@ -1,7 +1,11 @@
-const loader = document.querySelector('.preloader-div')
-// window.addEventListener('load', function(){
-//     loader.style.display = 'none' 
-// }) 
+// Loader Animation  
+const loader = document.querySelector('.preloader') 
+const loaderTl = gsap.timeline({
+    defaults: {duration:3, ease: 'power3.inOut'}
+}) 
+loaderTl.to(loader, {opacity: 0 })
+loaderTl.to(loader, {visibility: 'hidden' })
+
 
 const swiper = new Swiper('.swiper', { 
     loop: true, 
@@ -44,15 +48,7 @@ function activeCursor(e) {
     }
     
 }
- 
-
-// Loader Animation  
-const loaderTl = gsap.timeline({
-    defaults: {duration:3, ease: 'power3.inOut'}
-}) 
-loaderTl.to(loader, {opacity: 0 })
-loaderTl.to(loader, {visibility: 'hidden' })
-
+  
 
 // GSAP 
 let controller
