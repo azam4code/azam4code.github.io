@@ -49,6 +49,9 @@ function activeCursor(e) {
     
 }
   
+    const slides = document.querySelectorAll('.animate-parent')
+    const nav = document.querySelector('header') 
+    const footer = document.querySelector('footer') 
 
 // GSAP 
 let controller
@@ -56,11 +59,7 @@ let slideScene
 
 function animateSlide(){
     controller = new ScrollMagic.Controller()
-    const slides = document.querySelectorAll('.animate-parent')
-    const nav = document.querySelector('header') 
-    const footer = document.querySelector('footer') 
- 
-
+     
     slides.forEach((slide) => {
         const revealContent = slide.querySelectorAll('.reveal-content')
         const revealImg = slide.querySelector('.reveal-img')
@@ -91,6 +90,7 @@ animateSlide()
 function navToggle(e){
     if(!e.target.classList.contains('active')){
         e.target.classList.add('active')
+        nav.classList.add('active')
         gsap.to('.line1', .5, {  background: '#202022'})
         gsap.to('.line2', .5, {   width: '100%', background: '#202022'})
         gsap.to('.menu-popup', .5, {clipPath: 'circle(2500px at 100% -10%'})
@@ -98,6 +98,7 @@ function navToggle(e){
         document.body.classList.add('hide-overflow')
     } else{
         e.target.classList.remove('active')
+        nav.classList.remove('active')
         gsap.to('.line1', .5, {  background: '#d9d9d9'})
         gsap.to('.line2', .5, {  width: '70%', background: '#d9d9d9'})
         gsap.to('.menu-popup', .5, {clipPath: 'circle(50px at 100% -10%'})
