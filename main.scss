@@ -71,8 +71,7 @@ body {
     font-weight: 700;
     outline: transparent;
     display: flex;
-    width: max-content;
-    flex-direction: column;
+    width: max-content; 
     border: none;
 }
 
@@ -428,6 +427,14 @@ header.active {
                     padding: 1.4rem 3rem;
                     font-size: 1.8rem;
                     font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    img{
+                        width: 2.5rem;
+                        height: 2.5rem;
+                    }
                 }
 
                 .btn-icon {
@@ -470,6 +477,7 @@ header.active {
 
             img {
                 width: 100%;
+                border-radius: 5px;
             }
         }
     }
