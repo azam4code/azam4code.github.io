@@ -28,7 +28,7 @@ ul {
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    cursor: none; 
+    cursor: none;
 }
 
 @media (max-width:1400px) {
@@ -39,7 +39,9 @@ html {
 
 body {
     font-family: 'Space Grotesk', sans-serif;
-    background-color: var(--dark-color);
+    background: repeating-conic-gradient(#0000 .0004%, #000d .0005%),
+        linear-gradient(0deg, rgb(38, 19, 39), rgb(26, 26, 58), black);
+    background-blend-mode: overlay screen screen;
     color: var(--light-color);
     overflow-x: hidden;
     position: relative;
@@ -71,7 +73,7 @@ body {
     font-weight: 700;
     outline: transparent;
     display: flex;
-    width: max-content; 
+    width: max-content;
     border: none;
 }
 
@@ -431,7 +433,7 @@ header.active {
                     align-items: center;
                     gap: 1rem;
 
-                    img{
+                    img {
                         width: 2.5rem;
                         height: 2.5rem;
                     }
